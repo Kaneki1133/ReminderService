@@ -12,12 +12,12 @@ const setupAndStartServer = async () =>{
     app.listen(PORT , async ()=>{
         console.log(`Server has Started on ${PORT}`);
         
-        // sendBasicEmail(
-        //     'support@admin.com',
-        //     'shloktiwari1133@gmail.com',
-        //     'this is a testing mail',
-        //     'hey how are you i hope you doing great'
-        // );
+        sendBasicEmail(
+            'support@admin.com',
+            'srishtitripathi2202@gmail.com',
+            'this is a testing mail',
+            'hey how are you i hope you doing great'
+        );
 
     });
 }
