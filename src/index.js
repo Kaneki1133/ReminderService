@@ -20,7 +20,7 @@ const setupAndStartServer = async () =>{
         jobs();
         // sendBasicEmail(
         //     'support@admin.com',
-        //     'srishtitripathi2202@gmail.com',
+        //     'asdad@gmail.com',
         //     'this is a testing mail',
         //     'hey how are you i hope you doing great'
         // );
