@@ -10,8 +10,9 @@ const sender = require(`../config/emailConfig`);
 
 
 const setupJobs = () => {
-    cron.schedule("*/1 * * * *" , async ()=>{
+    cron.schedule("*/2 * * * *" , async ()=>{
         const response = await emailService.fetchPendingEmails();
+        
         response.forEach((email) => {
             sender.sendMail({
                 from :'ReminderService@gmail.com',
@@ -28,6 +29,7 @@ const setupJobs = () => {
                 }
             });
         });
+
     });
 };
 
