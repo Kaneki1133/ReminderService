@@ -5,12 +5,17 @@ const { PORT } = require(`./config/serverConfig`);
 const sendBasicEmail = require(`./service/email-service`);
 
 const jobs = require(`./utils/jobs`);
+const { createChannel } = require(`./utils/messageQueue`);
+
 const TicketController = require(`./controller/ticket-controller`);
 
-const setupAndStartServer = async () =>{
+const setupAndStartServer = async () => {
+
     const app = express();
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
+
+    //const channel = await createChannel();
 
     app.post('/api/v1/tickets',TicketController.create);
 
@@ -18,6 +23,7 @@ const setupAndStartServer = async () =>{
         console.log(`Server has Started on ${PORT}`);
         console.log("STARTING OF CRON JOBS")
         jobs();
+
         // sendBasicEmail(
         //     'support@admin.com',
         //     'asdad@gmail.com',
